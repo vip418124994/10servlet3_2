@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>作品列表<a href="send.html">发布图片</a></h3>
+<div th:each="i:${list}">
+    <h4 th:text="${i.title}">标题</h4>
+    <img th:src="${i.url}" width="300" alt="">
+    <p th:text="${i.createdStr}">时间</p>
+    <a th:href="'delete?id='+${i.id}">删除</a>
+    <hr>
+</div>
+</body>
+</html>
